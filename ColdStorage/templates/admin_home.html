@@ -1,0 +1,112 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+
+<section id="main-content">
+	<section class="wrapper">
+		<!-- //market-->
+		<div class="market-updates">
+			<div class="col-md-4 market-update-gd">
+				<div class="market-update-block clr-block-2" style="background-color:#b3ab85">
+					<div class="col-md-4 market-update-right" >
+						<i class="fa fa-eye"> </i>
+					</div>
+					 <div class="col-md-8 market-update-left" >
+					<a href="/all_users"> <h4>Users</h4>
+					<h3>{{users}}</h3>
+					<p>Other hand, we denounce</p>
+					</a>
+				  </div>
+
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-4 market-update-gd">
+				<div class="market-update-block clr-block-1" style="background-color:#0c2f41">
+					<div class="col-md-4 market-update-right">
+						<i class="fa fa-users" ></i>
+					</div>
+					<div class="col-md-8 market-update-left">
+						<a href="/manage_storage"> <h4>Storage</h4>
+						<h3>{{storage}}</h3>
+							<p>Other hand, we denounce</p></a>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-4 market-update-gd">
+				<div class="market-update-block clr-block-3"  style="background-color:#b3ab85">
+					<div class="col-md-4 market-update-right">
+						<i class="fa fa-usd"></i>
+					</div>
+					<div class="col-md-8 market-update-left">
+					<a href="/view_new_application_request">New Request <h4></h4>
+						<h3>{{new}}</h3>
+						<p>Other hand, we denounce</p></a>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+		   <div class="clearfix"> </div>
+		</div>
+		<div class="market-updates">
+			<div class="col-md-4 market-update-gd">
+				<div class="market-update-block clr-block-2"  style="background-color:#0c2f41">
+					<div class="col-md-4 market-update-right">
+						<i class="fa fa-eye"> </i>
+					</div>
+					 <div class="col-md-8 market-update-left">
+			<a href="/view_accepted_application_request"> <h4>Accepted Request</h4>
+					<h3>{{accept}}</h3>
+					<p>Other hand, we denounce</p>
+			</a>
+				  </div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-4 market-update-gd">
+				<div class="market-update-block clr-block-1"   style="background-color:#b3ab85">
+					<div class="col-md-4 market-update-right">
+						<i class="fa fa-users" ></i>
+					</div>
+					<div class="col-md-8 market-update-left">
+				<a href="/view_rejected_application_request"><h4>Rejected Request </h4>
+						<h3>{{reject}}</h3>
+					<p>Other hand, we denounce</p></a>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-4 market-update-gd">
+				<div class="market-update-block clr-block-3" style="background-color:#0c2f41">
+					<div class="col-md-4 market-update-right">
+						<i class="fa fa-usd"></i>
+					</div>
+					<div class="col-md-8 market-update-left">
+		<a href="/view_all_application_request"><h4>Total Request</h4>
+						<h3>{{total}}</h3>
+			<p>Other hand, we denounce</p></a>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //market-->
+
+		<div class="agil-info-calendar">
+		<!-- calendar -->
+
+
+
+</section>
+ <!-- footer -->
+		  <div class="footer">
+			<div class="wthree-copyright">
+			  <p> All rights reserved | Design by coldstorage.com</p>
+			</div>
+		  </div>
+  <!-- / footer -->
+</section>
+
+{% endblock %}

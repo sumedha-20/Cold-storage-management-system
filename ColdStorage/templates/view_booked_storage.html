@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<section class="page-header bg_img padding-tb">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="page-header-content-area">
+            <h4 class="ph-title">Cold Storage Apply Now</h4>
+            <ul class="lab-ul">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active">ApplyNow</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="logins py-5">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="title-section mb-md-5 mb-4">
+            <h6 class="w3ls-title-sub"></h6>
+            <h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Booking Detail</h3>
+        </div>
+        <hr/>
+         <div class="container-fluid">
+   <table id="example" class="display nowrap" style="width:100%">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Application Number</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+          <th>Status</th>
+          <th>Application Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {% for i in storage %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{i.applicationNumber}}</td>
+          <td>{{i.user.user.first_name}} {{i.user.user.last_name}}</td>
+          <td>{{i.user.user.email}}</td>
+          <td>{{i.user.contact}}</td>
+          <td>{{i.status}}</td>
+          <td>{{i.applyDate}}</td>
+     <td style="width:150px">
+                   <a href="{% url 'view_detail_booked_storage' i.id %}" ><button class="btn btn-primary" ><i class="fa fa-eye"></i></button></a>
+     </td>
+        </tr>
+    {% endfor %}
+      </tbody>
+    </table>
+  </div>
+    </div>
+</section>
+
+
+{% endblock %}

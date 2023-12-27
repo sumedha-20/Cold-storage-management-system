@@ -1,0 +1,612 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img padding-tb">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="page-header-content-area">
+					<h4 class="ph-title">Garden Fresh Organic Vegetables</h4>
+
+				</div>
+			</div>
+</section>
+<section class="about-section relative padding-tb" id="about">
+			<div class="container">
+				<div class="row align-items-center mb-15">
+					<div class="col-lg-6 col-12">
+						<div class="about-thumb">
+							<img src="{% static 'assets/images/logo/home.jpg' %}" alt="about-thumb">
+						</div>
+					</div>
+					<div class="col-lg-6 col-12">
+						<div class="about-wrapper p-0">
+							<div class="about-title">
+								<h2><span class="d-lg-block"> Welcome to Our Cold Storage </span>Cold Farm.</h2>
+								<p>Continually productize compelling quality for packed with Elated productize compelling
+									quality for packed with all Elated ThemSetting up to website and creating pages.</p>
+							</div>
+							<div class="about-content">
+								<ul class="lab-ul list-group">
+									<li class="list-group-item py-1 px-0 border-none"><i class="icofont-tick-boxed mr-2 color-theme"></i>We are
+										providing different
+										services</li>
+									<li class="list-group-item py-1 px-0 border-none"><i class="icofont-tick-boxed mr-2 color-theme"></i>We are one
+										of leading company
+									</li>
+									<li class="list-group-item py-1 px-0 border-none"><i
+											class="icofont-tick-boxed mr-2 color-theme"></i>Profitability is the primary
+										goal of all business</li>
+									<li class="list-group-item py-1 px-0 border-none"><i class="icofont-tick-boxed mr-2 color-theme"></i>Learn how
+										to grow your Business
+									</li>
+									<li class="list-group-item py-1 px-0 border-none"><i
+											class="icofont-tick-boxed mr-2 color-theme"></i>Professional solutions for your
+										business</li>
+								</ul>
+								<a href="#" class="lab-btn mt-4"><span>Read More</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</section>
+<section class="product-section relative padding-tb bg-ash">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="section-header">
+							<h3>Our Storages</h3>
+							<p>Conveniently customize proactive web services for leveraged
+								interfaces without Globally </p>
+						</div>
+					</div>
+
+					<div class="col-12">
+
+						<div class="section-wrapper">
+							<div class="row justify-content-center">
+								{% for i in data %}
+								<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+									<div class="card mb-4 text-center bg-ash border-none relative">
+										<div class="addcart-overlay">
+											<div class="addcart-content">
+												<a href="/apply_now_selected/{{i.id}}" class="lab-btn d-inline-b">Shop Now</a>
+
+											</div>
+										</div>
+										<img src="{{i.image.url}}" class="card-img-top mb-2" alt="product" style="width:250px;height:200px">
+										<div class="card-body" style="width:250px;height:100px">
+
+											<a href="#">
+												<h6 class="card-title">{{i.title}}</h6>
+											</a>
+											<h6 class="product-price"> <span class="d-price">{{i.cost}} <i class="fas fa-rupee-sign"></i></span>
+											</h6>
+
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+</section>
+		<!-- product category section ending here -->
+
+		<!-- service section start here -->
+		<section class="service-section padding-tb">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="section-header">
+							<h3>Cold Storage Services</h3>
+							<p>Conveniently customize proactive web services for leveraged
+								interfaces without Globally </p>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="service-content">
+							<div class="row">
+								<div class="col-lg-4 col-md-6">
+									<div class="lab-item service-item">
+										<div class="lab-inner p-4 mb-4 text-left">
+											<div class="service-top d-flex align-items-center mb-4">
+												<div class="st-thumb mr-3">
+													<img src="{% static 'assets/images/service/03.png' %}" alt="service image">
+												</div>
+												<div class="st-content mt-2">
+													<a href="#">
+														<h6>Industries Served</h6>
+													</a>
+												</div>
+											</div>
+											<div class="service-bottom">
+												<p>Continually aggregate frictionle enthusias generate user friendly vortals
+													empowered without globally results.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="lab-item service-item">
+										<div class="lab-inner p-4 mb-4 text-left">
+											<div class="service-top d-flex align-items-center mb-4">
+												<div class="st-thumb mr-3">
+													<img src="{% static 'assets/images/service/02.png' %}" alt="service image">
+												</div>
+												<div class="st-content mt-2">
+													<a href="#">
+														<h6>Secure warehousing</h6>
+													</a>
+												</div>
+											</div>
+											<div class="service-bottom">
+												<p>Continually aggregate frictionle enthusias generate user friendly vortals
+													empowered without globally results.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="lab-item service-item">
+										<div class="lab-inner p-4 mb-4 text-left">
+											<div class="service-top d-flex align-items-center mb-4">
+												<div class="st-thumb mr-3">
+													<img src="{% static 'assets/images/service/03.png' %}" alt="service image">
+												</div>
+												<div class="st-content mt-2">
+													<a href="#">
+														<h6>Product consolidation and repackaging</h6>
+													</a>
+												</div>
+											</div>
+											<div class="service-bottom">
+												<p>Continually aggregate frictionle enthusias generate user friendly vortals
+													empowered without globally results.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="lab-item service-item">
+										<div class="lab-inner p-4 mb-4 text-left">
+											<div class="service-top d-flex align-items-center mb-4">
+												<div class="st-thumb mr-3">
+													<img src="{% static 'assets/images/service/04.png' %}" alt="service image">
+												</div>
+												<div class="st-content mt-2">
+													<a href="#">
+														<h6>Inventory control and order fulfillment</h6>
+													</a>
+												</div>
+											</div>
+											<div class="service-bottom">
+												<p>Continually aggregate frictionle enthusias generate user friendly vortals
+													empowered without globally results.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="lab-item service-item">
+										<div class="lab-inner p-4 mb-4 text-left">
+											<div class="service-top d-flex align-items-center mb-4">
+												<div class="st-thumb mr-3">
+													<img src="{% static 'assets/images/service/05.png' %}" alt="service image">
+												</div>
+												<div class="st-content mt-2">
+													<a href="#">
+														<h6>Online customer portal to check inventory,</h6>
+													</a>
+												</div>
+											</div>
+											<div class="service-bottom">
+												<p>Continually aggregate frictionle enthusias generate user friendly vortals
+													empowered without globally results.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="lab-item service-item">
+										<div class="lab-inner p-4 mb-4 text-left">
+											<div class="service-top d-flex align-items-center mb-4">
+												<div class="st-thumb mr-3">
+													<img src="{% static 'assets/images/service/06.png' %}" alt="service image">
+												</div>
+												<div class="st-content mt-2">
+													<a href="#">
+														<h6>Personalized customer service</h6>
+													</a>
+												</div>
+											</div>
+											<div class="service-bottom">
+												<p>Continually aggregate frictionle enthusias generate user friendly vortals
+													empowered without globally results.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="gallery-section padding-tb bg-ash" id="gallery">
+			<div class="container-fluid p-0 m-0">
+				<div class="row">
+					<div class="col-12">
+						<div class="section-header">
+							<h3>Cold Storage Gallery</h3>
+							<p>Conveniently customize proactive web services for leveraged
+								interfaces without Globally </p>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="gallery-content">
+							<div class="gallery-grid text-center">
+								<a href="{% static 'assets/images/gallery/01.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image" >
+									<img src="{% static 'assets/images/gallery/g1.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/02.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g2.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/03.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g3.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/04.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g4.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/05.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g5.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/06.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g6.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/07.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g7.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/08.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g8.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+							</div>
+							<div class="gallery-btn text-center mt-5">
+								<a href="#" class="lab-btn"><span>Load Gallery</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="team-section padding-tb">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="section-header">
+							<h3>Our Team Member</h3>
+							<p>Conveniently customize proactive web services for leveraged interfaces without Globally </p>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="section-wrapper">
+							<div class="row justify-content-center">
+								<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+									<div class="card mb-4 text-center border-none">
+										<img src="{% static 'assets/images/team/avatarboy.jpg' %}" class="card-img-top" alt="product">
+										<div class="card-body">
+											<a href="#">
+												<h6 class="card-title mb-0">Jason Roy</h6>
+											</a>
+											<p class="card-text mb-2">Manager</p>
+											<div class="social-share">
+												<a href="#" class="m-1 twitter"><i class="icofont-twitter"></i></a>
+												<a href="#" class="m-1 behance"><i class="icofont-behance"></i></a>
+												<a href="#" class="m-1 instagram"><i class="icofont-instagram"></i></a>
+												<a href="#" class="m-1 vimeo"><i class="icofont-vimeo"></i></a>
+												<a href="#" class="m-1 linkedin"><i class="icofont-linkedin"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+									<div class="card mb-4 text-center border-none">
+										<img src="{% static 'assets/images/team/avatar2.png' %}" class="card-img-top" alt="product">
+										<div class="card-body">
+											<a href="#">
+												<h6 class="card-title mb-0">Sahjahan Sagor</h6>
+											</a>
+											<p class="card-text mb-2">Founder & Ceo</p>
+											<div class="social-share">
+												<a href="#" class="m-1 twitter"><i class="icofont-twitter"></i></a>
+												<a href="#" class="m-1 behance"><i class="icofont-behance"></i></a>
+												<a href="#" class="m-1 instagram"><i class="icofont-instagram"></i></a>
+												<a href="#" class="m-1 vimeo"><i class="icofont-vimeo"></i></a>
+												<a href="#" class="m-1 linkedin"><i class="icofont-linkedin"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+									<div class="card mb-4 text-center border-none">
+										<img src="{% static 'assets/images/team/avatar3.png' %}" class="card-img-top" alt="product">
+										<div class="card-body">
+											<a href="#">
+												<h6 class="card-title mb-0">Alisha Kabir</h6>
+											</a>
+											<p class="card-text mb-2">Marketer</p>
+											<div class="social-share">
+												<a href="#" class="m-1 twitter"><i class="icofont-twitter"></i></a>
+												<a href="#" class="m-1 behance"><i class="icofont-behance"></i></a>
+												<a href="#" class="m-1 instagram"><i class="icofont-instagram"></i></a>
+												<a href="#" class="m-1 vimeo"><i class="icofont-vimeo"></i></a>
+												<a href="#" class="m-1 linkedin"><i class="icofont-linkedin"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+									<div class="card mb-4 text-center border-none">
+										<img src="{% static 'assets/images/team/avatar5.png' %}" class="card-img-top" alt="product">
+										<div class="card-body">
+											<a href="#">
+												<h6 class="card-title mb-0">Jeson Smith</h6>
+											</a>
+											<p class="card-text mb-2">Farmer</p>
+											<div class="social-share">
+												<a href="#" class="m-1 twitter"><i class="icofont-twitter"></i></a>
+												<a href="#" class="m-1 behance"><i class="icofont-behance"></i></a>
+												<a href="#" class="m-1 instagram"><i class="icofont-instagram"></i></a>
+												<a href="#" class="m-1 vimeo"><i class="icofont-vimeo"></i></a>
+												<a href="#" class="m-1 linkedin"><i class="icofont-linkedin"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- team section ending here -->
+
+		<!-- testimonial Section start here -->
+		<section class="testimonial-section padding-tb bg-ash">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="section-header">
+							<h3>What Client Say Our Cold Storage</h3>
+							<p>Conveniently customize proactive web services for leveraged
+								interfaces without Globally </p>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="testimonial-content">
+							<div class="row">
+								<div class="col-lg-4 col-12">
+									<div class="lab-item testi-item-2 mb-3">
+										<div class="lab-inner">
+											<div class="testi-top">
+												<div class="testi-t-thumb">
+													<img src="{% static 'assets/images/team/avatar5.png' %}" alt="author-image">
+												</div>
+												<div class="testi-t-content">
+													<a href="#">
+														<h6>Jeson smith</h6>
+													</a>
+													<p>Founder & CEO</p>
+													<div class="rating">
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+													</div>
+												</div>
+											</div>
+											<div class="testi-bottom">
+												<p><img class="q1" src="{% static 'assets/images/testimonial/q1.png' %}" alt='"'>
+													Continually Onceptualizef Technically invs
+													Professionally monetizeturkeyf Testingdu
+													Frofessionally oe-enablfunctaizede-come
+													rce Onceptualize Technically initiatives.
+													<img class="q2" src="{% static 'assets/images/testimonial/q2.png' %}" alt='"'>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-12">
+									<div class="lab-item testi-item-2 mb-3">
+										<div class="lab-inner">
+											<div class="testi-top">
+												<div class="testi-t-thumb">
+													<img src="{% static 'assets/images/team/avatar2.png' %}" alt="author-image">
+												</div>
+												<div class="testi-t-content">
+													<a href="#">
+														<h6>Sahjahan Sagor</h6>
+													</a>
+													<p>Founder & CEO</p>
+													<div class="rating">
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+													</div>
+												</div>
+											</div>
+											<div class="testi-bottom">
+												<p><img class="q1" src="{% static 'assets/images/testimonial/q1.png' %}" alt='"'>
+													Continually Onceptualizef Technically invs
+													Professionally monetizeturkeyf Testingdu
+													Frofessionally oe-enablfunctaizede-come
+													rce Onceptualize Technically initiatives.
+													<img class="q2" src="{% static 'assets/images/testimonial/q2.png' %}" alt='"'>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-12">
+									<div class="lab-item testi-item-2 mb-3">
+										<div class="lab-inner">
+											<div class="testi-top">
+												<div class="testi-t-thumb">
+													<img src="{% static 'assets/images/team/avatar3.png' %}" alt="author-image">
+												</div>
+												<div class="testi-t-content">
+													<a href="#">
+														<h6>Alisha Kabir</h6>
+													</a>
+													<p>Founder & CEO</p>
+													<div class="rating">
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+														<span><a href="#"><i class="far fa-star"></i></a></span>
+													</div>
+												</div>
+											</div>
+											<div class="testi-bottom">
+												<p><img class="q1" src="{% static 'assets/images/testimonial/q1.png' %}" alt='"'>
+													Continually Onceptualizef Technically invs
+													Professionally monetizeturkeyf Testingdu
+													Frofessionally oe-enablfunctaizede-come
+													rce Onceptualize Technically initiatives.
+													<img class="q2" src="{% static 'assets/images/testimonial/q2.png' %}" alt='"'>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- testimonial Section end here -->
+
+		<!-- sponsor section start here -->
+		<div class="sponsor-section padding-tb bg-ash">
+			<div class="container">
+				<div class="section-wrapper">
+					<div class="sponsor-slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="sponsor-item">
+									<div class="sponsor-thumb">
+										<a href="#"><img src="{% static 'assets/images/sponsor/01.png' %}" alt="sponsor"></a>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="sponsor-item">
+									<div class="sponsor-thumb">
+										<a href="#"><img src="{% static 'assets/images/sponsor/02.png' %}" alt="sponsor"></a>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="sponsor-item">
+									<div class="sponsor-thumb">
+										<a href="#"><img src="{% static 'assets/images/sponsor/03.png' %}" alt="sponsor"></a>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="sponsor-item">
+									<div class="sponsor-thumb">
+										<a href="#"><img src="{% static 'assets/images/sponsor/04.png' %}" alt="sponsor"></a>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="sponsor-item">
+									<div class="sponsor-thumb">
+										<a href="#"><img src="{% static 'assets/images/sponsor/05.png' %}" alt="sponsor"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- sponsor section ending here -->
+		<!-- Feature section start here -->
+		<section class="feature-section padding-tb">
+			<div class="container">
+				<div class="row text-center justify-content-center">
+					<div class="col-lg-3 col-sm-6 col-12">
+						<div class="lab-item">
+							<div class="lab-inner">
+								<div class="lab-thumb">
+									<img src="{% static 'assets/images/feature/01.png' %}" alt="Feature Image">
+								</div>
+								<div class="lab-content">
+									<h6>Products Range</h6>
+									<p>Conveniently customize recaptiualize
+										focused inter without globally </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-12">
+						<div class="lab-item">
+							<div class="lab-inner">
+								<div class="lab-thumb">
+									<img src="{% static 'assets/images/feature/02.png' %}" alt="Feature image">
+								</div>
+								<div class="lab-content">
+									<h6>Quality Matters</h6>
+									<p>Conveniently customize recaptiualize
+										focused inter without globally </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-12">
+						<div class="lab-item">
+							<div class="lab-inner">
+								<div class="lab-thumb">
+									<img src="{% static 'assets/images/feature/03.png' %}" alt="Feature image">
+								</div>
+								<div class="lab-content">
+									<h6>Free Shipping</h6>
+									<p>Conveniently customize recaptiualize
+										focused inter without globally </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-12">
+						<div class="lab-item">
+							<div class="lab-inner">
+								<div class="lab-thumb">
+									<img src="{% static 'assets/images/feature/04.png' %}" alt="Feature image">
+								</div>
+								<div class="lab-content">
+									<h6>Customer Satisfaction</h6>
+									<p>Conveniently customize recaptiualize
+										focused inter without globally </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+{% endblock %}

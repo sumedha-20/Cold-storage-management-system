@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	
+<!-- Mirrored from labartisan.net/demo/PoultryFarm/poultry-farm/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2022 10:23:42 GMT -->
+<head>
+		<title>Cold Storage Management System</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- google fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap"
+			rel="stylesheet">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/logo/Cold.png' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/icofont.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/lightcase.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+	</head>
+
+	<body>
+<script>{% for i in messages %}
+alert('{{i}}')
+{% endfor %}
+</script>
+		<!-- preloader start here -->
+		<div class="preloader">
+			<div class="preloader-inner">
+				<div class="preloader-icon">
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="mobile-menu transparent-header">
+			<nav class="mobile-header">
+				<div class="header-logo">
+					<a href="index.html"><img src="{% static 'assets/images/logo/Cold.png' %}" alt="logo" ></a>
+				</div>
+				<div class="header-bar">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</nav>
+			<nav class="mobile-menu">
+				<div class="mobile-menu-area">
+					<div class="mobile-menu-area-inner">
+						<ul class="lab-ul">
+					{% if request.user.is_authenticated %}
+										<li class="active">
+											<a href="/">Home</a>
+										</li>
+										<li><a href="/about">About</a></li>
+										<li><a href="/apply_now">Application Form</a></li>
+
+										<li>
+											<a href="#0" style="background-color:red">Cold Storage</a>
+											<ul class="lab-ul">
+												<li><a href="/apply_now">Apply</a></li>
+												<li><a href="/view_booked_storage">History</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#0" style="background-color:red">My Acoount</a>
+											<ul class="lab-ul">
+												<li><a href="/edit_user">Edit Profile</a></li>
+												<li><a href="/user_Change_Password">Change Password</a></li>
+												<li><a href="/logout">Logout</a></li>
+											</ul>
+										</li>
+										<li><a href="/contact">Contact</a></li>
+										{% else %}
+											<li><a href="/">Home</a></li>
+										<li><a href="/about">About</a></li>
+										<li>
+											<a href="/gallery">Gallery</a>
+										</li>
+										<li><a href="/contact">Contact</a></li>
+										<li><a href="/login_admin" style="color:red">Admin Login</a></li>
+										<li><a href="/login" style="color:red">Login</a></li>
+										<li><a href="/signup" style="color:red">SignUp</a></li>
+										{% endif %}
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!-- Mobile Menu Ending Here -->
+
+		<!-- desktop menu start here -->
+		<header class="header-section">
+			<div class="header-top">
+				<div class="container">
+					<div class="row justify-content-center align-items-center">
+						<div class="col-lg-5 col-12">
+							<div class="logo py-2">
+								<a href="index.html"><img src="{% static 'assets/images/logo/Cold.png' %}" alt="logo" style="height:100px"></a>
+							</div>
+						</div>
+						<div class="col-lg-7 col-12">
+							<div class="ht-left">
+								<ul class="lab-ul d-flex flex-wrap justify-content-end">
+									<li class="d-flex flex-wrap align-items-center">
+										<div class="ht-add-thumb mr-2">
+											<img src="{% static 'assets/images/header/02.png' %}" alt="email">
+										</div>
+										<div class="ht-add-content">
+											<span>Send Mail </span>
+											<span class="d-block text-bold">coldstorage@abcd.com</span>
+										</div>
+									</li>
+									<li class="d-flex flex-wrap align-items-center">
+										<div class="ht-add-thumb mr-2">
+											<img src="{% static 'assets/images/header/03.png' %}" alt="call">
+										</div>
+										<div class="ht-add-content">
+											<span>Make Call </span>
+											<span class="d-block text-bold">+91 1234567890</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom bg-theme">
+				<div class="header-area">
+					<div class="container">
+						<div class="primary-menu">
+							<div class="main-area w-100">
+								<div class="main-menu d-flex flex-wrap align-items-center justify-content-between w-100">
+									<div class="logo">
+										<a href="index.html"><img src="{% static 'assets/images/logo/Cold.png' %}" alt="logo"></a>
+									</div>
+									<ul class="lab-ul">
+										{% if request.user.is_authenticated %}
+										<li class="active">
+											<a href="/">Home</a>
+										</li>
+										<li><a href="/about">About</a></li>
+										<li><a href="/apply_now">Application Form</a></li>
+
+										<li>
+											<a href="#0" style="background-color:red">Cold Storage</a>
+											<ul class="lab-ul">
+												<li><a href="/apply_now">Apply</a></li>
+												<li><a href="/view_booked_storage">History</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#0" style="background-color:red">My Acoount</a>
+											<ul class="lab-ul">
+												<li><a href="/edit_user">Edit Profile</a></li>
+												<li><a href="/user_Change_Password">Change Password</a></li>
+												<li><a href="/logout">Logout</a></li>
+											</ul>
+										</li>
+										<li><a href="/contact">Contact</a></li>
+										{% else %}
+											<li><a href="/">Home</a></li>
+										<li><a href="/about">About</a></li>
+										<li>
+											<a href="/gallery">Gallery</a>
+										</li>
+										<li><a href="/contact">Contact</a></li>
+										<li><a href="/login_admin" style="color:red">Admin Login</a></li>
+										<li><a href="/login" style="color:red">Login</a></li>
+										<li><a href="/signup" style="color:red">SignUp</a></li>
+										{% endif %}
+									</ul>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- desktop menu ending here -->
+
+		<!-- Banner Section Start Here -->
+
+{% block body %}
+  {% endblock %}
+		<!-- footer section start here -->
+		<footer id="GFG">
+			<div class="footer-top relative padding-tb bg-ash relative">
+				<div class="shape-images">
+					<img src="{% static 'assets/images/shape-img/01.png' %}" alt="shape-images">
+				</div>
+				<div class="container">
+					<div class="section-wrapper row">
+						<div class="col-xl-3 col-md-6">
+							<div class="post-item">
+								<div class="footer-logo">
+									<img src="{% static 'assets/images/logo/Cold.png' %}" alt="footer-logo">
+								</div>
+								<p>Conveniently customizec web services aggregate frictionle internet withouevs Conveniently customizec. </p>
+								<p>Enthusiastically scale synergistic technologies for leveraged with technology quickly.</p>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<div class="post-item">
+								<div class="post-title">
+									<h5>Keep In Touch</h5>
+								</div>
+								<ul class="lab-ul footer-location">
+									<li>
+										<div class="icon-part">
+											<i class="icofont-phone"></i>
+										</div>
+										<div class="content-part">
+											<p>+91 0987654321</p>
+											<p>+91 1122334455</p>
+										</div>
+									</li>
+									<li>
+										<div class="icon-part">
+											<i class="icofont-wall-clock"></i>
+										</div>
+										<div class="content-part">
+											<p>Mon - Fri 09:00 - 18:00</p>
+											<p>(except public holidays)</p>
+										</div>
+									</li>
+									<li>
+										<div class="icon-part">
+											<i class="icofont-location-pin"></i>
+										</div>
+										<div class="content-part">
+											<p>25/2 Lane2 Vokte Street Building <br>Melborn City</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<div class="post-item">
+								<div class="post-title">
+									<h5>Cold Storage Product</h5>
+								</div>
+								<div class="lab-ul footer-post">
+									<div class="media mb-3">
+										<div class="fp-thumb mr-3">
+											<img src="{% static 'assets/images/gallery/b1.jpg' %}" alt="recent-post">
+										</div>
+										<div class="media-body">
+											<a href="#">
+												<h6 class="mt-0">Indore Cold Storage</h6>
+											</a>
+											<span class="price"> 25.99 Rs</span>
+										</div>
+									</div>
+									<div class="media mb-3">
+										<div class="fp-thumb mr-3">
+											<img src="{% static 'assets/images/gallery/b2.jpg' %}" alt="recent-post">
+										</div>
+										<div class="media-body">
+											<a href="#">
+												<h6 class="mt-0">Delhi Cold Storage</h6>
+											</a>
+											<span class="price"> 25.99 Rs</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<div class="post-item">
+								<div class="post-title">
+									<h5>Instagram Feed</h5>
+								</div>
+								<div class="lab-ul footer-gellary">
+									<figure class="figure">
+										<a href="{% static 'assets/images/gallery/g1.jpg' %}" data-rel="lightcase:myCollection:slideshow"><img src="{% static 'assets/images/gallery/g1.jpg' %}" class="img-fluid rounded" alt="footer-gellary"></a>
+									</figure>
+									<figure class="figure">
+										<a href="{% static 'assets/images/gallery/g2.jpg' %}" data-rel="lightcase:myCollection:slideshow"><img src="{% static 'assets/images/gallery/g2.jpg' %}" class="img-fluid rounded" alt="footer-gellary"></a>
+									</figure>
+									<figure class="figure">
+										<a href="{% static 'assets/images/gallery/g3.jpg' %}" data-rel="lightcase:myCollection:slideshow"><img src="{% static 'assets/images/gallery/g3.jpg' %}" class="img-fluid rounded" alt="footer-gellary"></a>
+									</figure>
+									<figure class="figure">
+										<a href="{% static 'assets/images/gallery/g4.jpg' %}" data-rel="lightcase:myCollection:slideshow"><img src="{% static 'assets/images/gallery/g4.jpg' %}" class="img-fluid rounded" alt="footer-gellary"></a>
+									</figure>
+									<figure class="figure">
+										<a href="{% static 'assets/images/gallery/g5.jpg' %}" data-rel="lightcase:myCollection:slideshow"><img src="{% static 'assets/images/gallery/g5.jpg' %}" class="img-fluid rounded" alt="footer-gellary"></a>
+									</figure>
+									<figure class="figure">
+										<a href="{% static 'assets/images/gallery/g6.jpg' %}" data-rel="lightcase:myCollection:slideshow"><img src="{% static 'assets/images/gallery/g6.jpg' %}" class="img-fluid rounded" alt="footer-gellary"></a>
+									</figure>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="section-wrapper">
+						<p class="text-center">&copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Cold Storage</a> All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer section start here -->
+
+		<!-- scrollToTop start here -->
+		<a href="#" class="scrollToTop" id="GFG4"><i class="icofont-swoosh-up"></i><span class="pluse_1"></span><span class="pluse_2"></span></a>
+		<!-- scrollToTop ending here -->
+
+
+		<script src="{% static 'assets/js/jquery.js' %}"></script>
+		<script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
+		<script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'assets/js/swiper.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.countdown.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+		<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+		<script src="{% static 'assets/js/lightcase.js' %}"></script>
+		<script src="{% static 'assets/js/functions.js' %}"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+</script>
+	</body>
+
+
+</html>

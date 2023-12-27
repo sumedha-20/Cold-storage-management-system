@@ -1,0 +1,47 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+ <div class="panel panel-default" style="padding:2%">
+    <div class="panel-heading" style="margin:2%">
+     Registered Users
+    </div>
+                    <table id="example" class="display" style="width:100%;">
+                        <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Address</th>
+                            <th>Reg Date</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in data %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+                            <td>{{i.user.email}}</td>
+                            <td>{{i.contact}}</td>
+                            <td>{{i.address}}</td>
+                            <td>{{i.regDate}}</td>
+                            <td style="width:150px">
+                            <a href="{% url 'delete_user' i.user.id %}" ><button class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash-o"></i>
+                                    </button>
+                                </a></td>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</section>
+
+{% endblock %}

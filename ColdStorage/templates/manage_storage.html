@@ -1,0 +1,49 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+ <div class="panel panel-default" style="padding:2%">
+    <div class="panel-heading" style="margin:2%">
+     Manage Cold Storage
+    </div>
+                    <table id="example" class="display" style="width:100%;">
+                        <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Title</th>
+                            <th>Location</th>
+                            <th>Cost</th>
+                            <th>Image</th>
+                            <th>Creation Date</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in data %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{i.title}}</td>
+                            <td>{{i.location}}</td>
+                            <td>{{i.cost}}</td>
+                            <td><img src="{{i.image.url}}" style="width:50px;height:50"> </td>
+                            <td>{{i.creationDate}}</td>
+                    <td style="width:150px">
+                   <a href="{% url 'edit_storage' i.id %}" ><button class="btn btn-primary" ><i class="fa fa-edit"></i></button></a>
+                            <a href="{% url 'delete_storage' i.id %}" ><button class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash-o"></i>
+                                    </button>
+                                </a></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</section>
+
+{% endblock %}

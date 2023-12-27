@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+	<section class="page-header bg_img padding-tb">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="page-header-content-area">
+					<h4 class="ph-title">Cold Storage Apply Now</h4>
+					<ul class="lab-ul">
+						<li><a href="index.html">Home</a></li>
+						<li><a class="active">ApplyNow</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+			<section class="logins py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<div class="title-section mb-md-5 mb-4">
+				<h6 class="w3ls-title-sub"></h6>
+				<h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Apply Now</h3>
+			</div><hr/>
+			<div class="login px-sm-12" style="width:100%">
+				<form action="" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="form-group row">
+						<div class="col-md-6">
+							<label><strong>Cold Storage</strong></label>
+						</div>
+						<div class="col-md-6">
+							  <select name="storage" class="form-control">
+                                        {% for i in storage %}
+                                        <option value="{{i.id}}" {% if i.id == data.id %} selected {% endif %}>{{i.title}}</option>
+                                        {% endfor %}
+                                    </select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-6">
+							<label><strong>Type</strong></label>
+						</div>
+						<div class="col-md-6">
+						<select name="type" class="form-control">
+                                        <option value="Fruits">Fruits</option>
+                                        <option value="Vegetable">Vegetable</option>
+                                        <option value="Grains">Grains</option>
+                                        <option value="Pulse">Pulse</option>
+                                        <option value="others">others</option>
+                                    </select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-6">
+							<label class="mb-2"><strong>From Date</strong></label>
+						</div>
+						<div class="col-md-6">
+						<input type="date" id="datepicker" min="" class="form-control" name="from" required="">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-6">
+							<label class="mb-2"><strong>To Date</strong></label>
+						</div>
+						<div class="col-md-6">
+						<input type="date" id="datepicker1" min="" class="form-control" name="to" required="">
+						</div>
+					</div>
+			<button type="submit" class="lab-btn">
+										<span>Apply Now</span>
+									</button>					<p class="text-center mt-5">
+					</p>
+				</form>
+			</div>
+		</div>
+					</section>
+
+<script type="text/javascript">
+
+var month = parseInt(new Date().getMonth()+1).toString();
+var mydate = (new Date().getDate()).toString();
+if (month.length == '1'){
+	month = 0 + month;
+}
+if (mydate.length == '1'){
+	mydate = 0 + mydate;
+}
+console.log("My month === ", month.length);
+console.log("My date is", new Date().getFullYear() + "-" +  month + "-" + mydate);
+document.getElementById("datepicker").min = new Date().getFullYear() + "-" +  month + "-" + mydate;
+
+
+var month1 = parseInt(new Date().getMonth()+1).toString();
+var mydate1 = (new Date().getDate()).toString();
+if (month1.length == '1'){
+	month1 = 0 + month1;
+}
+if (mydate1.length == '1'){
+	mydate1 = 0 + mydate1;
+}
+console.log("My month1 === ", month1.length);
+console.log("My date is", new Date().getFullYear() + "-" +  month1 + "-" + mydate1);
+document.getElementById("datepicker1").min = new Date().getFullYear() + "-" +  month1 + "-" + mydate1;
+
+
+</script>
+	{% endblock %}

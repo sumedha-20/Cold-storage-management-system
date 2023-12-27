@@ -1,0 +1,185 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<section class="page-header bg_img padding-tb" id="GFG2">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="page-header-content-area">
+            <h4 class="ph-title">Cold Storage Booking Detail</h4>
+            <ul class="lab-ul">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active">Booking Detail</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="logins py-5" >
+    <div class="container py-xl-5 py-lg-3" >
+        <div class="container-fluid">
+            <h6 align="center" style="color:#fe964d">User Detail of({{data.applicationNumber}})</h6>
+            <hr/>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Name</strong>
+                </div>
+                <div class="col-md-3">
+                   {{data.user.user.first_name}} {{data.user.user.last_name}}
+                </div>
+                <div class="col-md-3">
+                    <strong>Phone number</strong>
+                </div>
+                <div class="col-md-3">
+                   {{data.user.contact}}
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Email</strong>
+                </div>
+                <div class="col-md-3">
+                  {{data.user.user.email}}
+                </div>
+                <div class="col-md-3">
+                    <strong>Registration Date</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.user.regDate}}
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container-fluid">
+            <h6 align="center" style="color:#fe964d">Storage Details</h6>
+            <hr/>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Title</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.storage.title}}
+                </div>
+                <div class="col-md-3">
+                  <strong> Storage Location</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.storage.location}}
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Cost</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.storage.cost}} <i class="fas fa-rupee-sign"></i>
+                </div>
+                <div class="col-md-3">
+                    <strong>Storage Image</strong>
+                </div>
+                <div class="col-md-3">
+                    <img src="{{data.storage.image.url}}" style="width:100px;height:100px">
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container-fluid">
+            <h6 align="center" style="color:#fe964d">Application Detail</h6>
+            <hr/>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Type</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.type}}
+                </div>
+                <div class="col-md-3">
+                  <strong>From Date</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.fromDate}}
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>To Date</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.toDate}}
+                </div>
+                <div class="col-md-3">
+                    <strong>Total Days</strong>
+                </div>
+                <div class="col-md-3">
+{{days}}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Application status</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.status}}
+                </div>
+                <div class="col-md-3">
+                    <strong>Application Date</strong>
+                </div>
+                <div class="col-md-3">
+                   {{data.applyDate}}
+                </div>
+            </div>
+        </div><hr>
+        {% if data.status == "Accepted" %}
+         <div class="container-fluid">
+            <h6 align="center" style="color:#fe964d">Invoice Detail</h6>
+            <hr/>
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>Storage Cost(per day)</strong>
+                </div>
+                <div class="col-md-6">
+                    {{data.storage.cost}} <i class="fas fa-rupee-sign"></i>
+                </div></div><hr>
+             <div class="row">
+                <div class="col-md-6">
+                  <strong>Total Days</strong>
+                </div>
+                <div class="col-md-6">
+                    {{days}}
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>Total Cost</strong>
+                </div>
+                <div class="col-md-6">
+                    {{totalcost}} <i class="fas fa-rupee-sign"></i>
+                </div>
+            </div>
+            </div>
+            <hr>
+        {% endif %}
+
+            </div>
+           {% if data.status == "Accepted" %}
+    <div class="container-fluid" align="center">
+<input type="button" class="lab-btn" value="print" onclick="printDiv()" id="GFG3"  style="background-color:green;">
+    </div>
+    {% endif %}
+</section>
+
+
+<script>
+       function printDiv() {
+            document.getElementById("GFG").style.display='none';
+            document.getElementById("GFG2").style.display='none';
+            document.getElementById("GFG3").style.display='none';
+            document.getElementById("GFG4").style.display='none';
+            window.print();
+            document.getElementById("GFG").style.display='';
+            document.getElementById("GFG2").style.display='';
+            document.getElementById("GFG3").style.display='';
+            document.getElementById("GFG4").style.display='';
+        }
+    </script>
+{% endblock %}

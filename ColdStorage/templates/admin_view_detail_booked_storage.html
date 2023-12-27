@@ -1,0 +1,149 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+ <div class="panel panel-default" style="padding:2%">
+    <div class="panel-heading" style="margin:2%">
+      Application Details
+    </div>
+        <div class="container-fluid">
+            <h6 align="center" style="color:#fe964d">User Detail of({{data.applicationNumber}})</h6>
+            <hr/>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Name</strong>
+                </div>
+                <div class="col-md-3">
+                   {{data.user.user.first_name}} {{data.user.user.last_name}}
+                </div>
+                <div class="col-md-3">
+                    <strong>Phone number</strong>
+                </div>
+                <div class="col-md-3">
+                   {{data.user.contact}}
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Email</strong>
+                </div>
+                <div class="col-md-3">
+                  {{data.user.user.email}}
+                </div>
+                <div class="col-md-3">
+                    <strong>Registration Date</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.user.regDate}}
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container-fluid">
+            <h6 align="center" style="color:#fe964d">Storage Details</h6>
+            <hr/>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Title</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.storage.title}}
+                </div>
+                <div class="col-md-3">
+                  <strong> Storage Location</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.storage.location}}
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Cost</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.storage.cost}}	<i class="fa fa-inr"></i>
+                </div>
+                <div class="col-md-3">
+                    <strong>Storage Image</strong>
+                </div>
+                <div class="col-md-3">
+                    <img src="{{data.storage.image.url}}" style="width:100px;height:100px">
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container-fluid">
+            <h6 align="center" style="color:#fe964d">Application Detail</h6>
+            <hr/>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Type</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.type}}
+                </div>
+                <div class="col-md-3">
+                  <strong>From Date</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.fromDate}}
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>To Date</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.toDate}}
+                </div>
+                <div class="col-md-3">
+                    <strong>Total Days</strong>
+                </div>
+                <div class="col-md-3">
+{{days}}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Application status</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.status}}
+                </div>
+                <div class="col-md-3">
+                    <strong>Application Date</strong>
+                </div>
+                <div class="col-md-3">
+                   {{data.applyDate}}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Remark Date</strong>
+                </div>
+                <div class="col-md-3">
+                    {{data.remarkDate}}
+                </div>
+                <div class="col-md-3">
+                    <strong>Remark</strong>
+                </div>
+                <div class="col-md-3">
+                   {{data.remark}}
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+         {% if data.status == 'Not Updated Yet' %}  <a href="{% url 'approve_request' data.id %}"> <button class="btn btn-primary submit mt-4" >Take Action</button>
+           </a></div>
+        {% endif %}
+    </section>
+</section>
+
+
+{% endblock %}

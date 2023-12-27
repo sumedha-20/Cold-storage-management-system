@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img padding-tb">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="page-header-content-area">
+					<h4 class="ph-title">Garden Fresh Organic Vegetables</h4>
+
+				</div>
+			</div>
+</section>
+		<section class="gallery-section padding-tb bg-ash" id="gallery">
+			<div class="container-fluid p-0 m-0">
+				<div class="row">
+					<div class="col-12">
+						<div class="section-header">
+							<h3>Cold Storage Gallery</h3>
+							<p>Conveniently customize proactive web services for leveraged
+								interfaces without Globally </p>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="gallery-content">
+							<div class="gallery-grid text-center">
+								<a href="{% static 'assets/images/gallery/01.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image" >
+									<img src="{% static 'assets/images/gallery/g1.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/02.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g2.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/03.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g3.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/04.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g4.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/05.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g5.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/06.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g6.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/07.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g7.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+								<a href="{% static 'assets/images/gallery/08.jpg' %}" data-rel="lightcase:myCollection:slideshow" class="grid-image">
+									<img src="{% static 'assets/images/gallery/g8.jpg' %}" alt="gallery-image" style="height:300px">
+								</a>
+							</div>
+							<div class="gallery-btn text-center mt-5">
+								<a href="#" class="lab-btn"><span>Load Gallery</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+{% endblock %}

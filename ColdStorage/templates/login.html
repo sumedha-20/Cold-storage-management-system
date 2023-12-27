@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+{% if error == "pat1" %}
+<script>
+    alert('logged in successfully');
+    window.location="";
+</script>
+{% endif %}
+<section class="page-header bg_img padding-tb">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="page-header-content-area">
+					<h4 class="ph-title">Cold Storage Login US</h4>
+					<ul class="lab-ul">
+						<li><a href="index.html">Home</a></li>
+						<li><a class="active">Login Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	<section class="logins py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<div class="title-section mb-md-5 mb-4">
+				<h6 class="w3ls-title-sub"></h6>
+				<h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Login Now</h3>
+			</div><hr/>
+			<div class="login px-sm-4 mx-auto mw-100 login-wrapper">
+				<form class="login-wrapper" action="" method="post">
+					{% csrf_token %}
+					<div class="form-group">
+						<label>Email ID</label>
+						<input type="email" class="form-control" name="uname" placeholder="Enter Email ID" required="">
+						<small id="emailHelp" class="form-text text-muted">We'll never share your Detail with anyone else.</small>
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" class="form-control" name="pwd" placeholder="Enter Your Password" required="">
+					</div>
+					<button type="submit" class="lab-btn">
+										<span>Login</span>
+									</button>
+					<p class="text-center mt-5">
+						<a href="{% url 'signup' %}"> Don't have an Account?  Register here</a>
+					</p>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!-- //login -->
+{% endblock %}

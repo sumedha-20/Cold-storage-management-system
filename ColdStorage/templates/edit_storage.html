@@ -1,0 +1,59 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+<section id="main-content">
+	<section class="wrapper">
+	<div class="form-w3layouts">
+        <!-- page start-->
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Update Storage Storage
+                        </header>
+                        <div class="panel-body">
+                            <div class="position-center">
+<div class="login px-sm-12" style="width:100%">
+				<form action="" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="form-group row">
+						<div class="col-md-12">
+						<label>Title</label>
+						<input type="text" class="form-control" name="title" placeholder="title" required="" value="{{data.title}}">
+						</div>
+					</div>
+                    <div class="form-group row">
+						<div class="col-md-12">
+						<label>Location</label>
+						<input type="text" class="form-control" name="location" placeholder="location" required="" value="{{data.location}}">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+						<label>Cost</label>
+						<input type="text" class="form-control" name="cost" placeholder="Cost" required="" value="{{data.cost}}">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-6">
+						<label>Image</label>
+						<input type="file" class="form-control" name="image">
+						</div>
+						<div class="col-md-6">
+							   <img src="{{data.image.url}}" style="width:200px;height:100px;">
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary submit mt-4">Update</button>
+
+				</form>
+			</div>
+							</div>
+						</div>
+					</section>
+			</div>
+		</div>
+	</div>
+	</section>
+</section>
+{% endblock %}

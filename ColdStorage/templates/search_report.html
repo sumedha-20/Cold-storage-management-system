@@ -1,0 +1,71 @@
+{% extends 'admin_index.html' %}
+{% load static %}
+{% block body %}
+   <section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+ <div class="panel panel-default" style="padding:2%">
+    <div class="panel-heading">
+ Search Report
+    </div>
+    <div>
+                   <div class="panel-body">
+                            <div class="position-center">   <form method="POST" action="">
+        {% csrf_token %}
+                        <div class="row">
+                        <div class="col-md-12">
+        <label><h5>Search application number request by Application Number/Email/Contact Number/Status</h5></label>
+
+        <input type="text" name="userinput" required class="form-control"></div>
+
+        <div>
+            <button type="submit" class="btn btn-warning btn-lg" style="margin:2%">View</button>
+        </div>
+                        </div>
+        </form>
+
+                            </div>
+                   </div><hr>
+					<!-- /Page Header -->
+{% if data %}
+                              <h4 align="center" style="color:blue"> Search Reports Detail againt Keyword '{{userinput}}'</h4>
+        <hr>
+            <table id="example" class="display" style="width:100%;">
+                  <thead>
+        <tr>
+          <th>#</th>
+          <th>Application Number</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+          <th>Status</th>
+          <th>Application Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {% for i in data %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{i.applicationNumber}}</td>
+          <td>{{i.user.user.first_name}} {{i.user.user.last_name}}</td>
+          <td>{{i.user.user.email}}</td>
+          <td>{{i.user.contact}}</td>
+          <td>{{i.status}}</td>
+          <td>{{i.applyDate}}</td>
+     <td style="width:150px">
+                   <a href="{% url 'admin_view_detail_booked_storage' i.id %}" ><button class="btn btn-primary" ><i class="fa fa-eye"></i></button></a>
+     </td>
+        </tr>
+    {% endfor %}
+      </tbody>
+                    </table>
+                    {% endif %}
+				</div>
+</div>
+
+        </div>
+    </section>
+   </section>
+{% endblock %}
